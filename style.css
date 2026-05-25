@@ -1,4 +1,6 @@
+/* ================================= */
 /* RESET */
+/* ================================= */
 
 *{
     margin:0;
@@ -6,7 +8,9 @@
     box-sizing:border-box;
 }
 
+/* ================================= */
 /* BODY */
+/* ================================= */
 
 body{
 
@@ -25,7 +29,9 @@ body{
     scroll-behavior:smooth;
 }
 
+/* ================================= */
 /* NAVBAR */
+/* ================================= */
 
 .navbar{
 
@@ -38,6 +44,9 @@ body{
     padding:25px 8%;
 
     position:fixed;
+
+    top:0;
+    left:0;
 
     background:rgba(10,10,10,0.55);
 
@@ -69,14 +78,20 @@ nav a{
     text-decoration:none;
 
     transition:0.3s;
+
+    font-weight:bold;
 }
 
 nav a:hover{
 
     color:#ff008c;
+
+    text-shadow:0 0 10px #ff008c;
 }
 
+/* ================================= */
 /* HERO */
+/* ================================= */
 
 .hero{
 
@@ -88,17 +103,45 @@ nav a:hover{
 
     padding:120px 8%;
 
-    background:
-    linear-gradient(rgba(0,0,0,0.7),
-    rgba(0,0,0,0.8));
-    
     position:relative;
 
     overflow:hidden;
+
+    background:
+    linear-gradient(
+        rgba(0,0,0,0.75),
+        rgba(0,0,0,0.88)
+    );
+}
+
+.hero::before{
+
+    content:"";
+
+    position:absolute;
+
+    width:500px;
+    height:500px;
+
+    background:#ff008c;
+
+    border-radius:50%;
+
+    filter:blur(180px);
+
+    opacity:0.18;
+
+    top:-150px;
+    right:-100px;
 }
 
 .hero-content{
+
     max-width:700px;
+
+    position:relative;
+
+    z-index:2;
 }
 
 .tag{
@@ -106,6 +149,8 @@ nav a:hover{
     color:#ff008c;
 
     letter-spacing:2px;
+
+    font-weight:bold;
 }
 
 .hero h2{
@@ -124,6 +169,8 @@ nav a:hover{
     line-height:1.8;
 
     margin-bottom:30px;
+
+    font-size:1.1rem;
 }
 
 .hero button{
@@ -150,9 +197,13 @@ nav a:hover{
 .hero button:hover{
 
     transform:scale(1.05);
+
+    box-shadow:0 0 35px #ff008c;
 }
 
-/* SOBRE */
+/* ================================= */
+/* PÁGINA SOBRE */
+/* ================================= */
 
 .sobre{
 
@@ -164,7 +215,7 @@ nav a:hover{
 
     align-items:center;
 
-    padding:100px 8%;
+    padding:180px 8% 100px;
 }
 
 .sobre-texto h3{
@@ -185,6 +236,8 @@ nav a:hover{
     line-height:1.9;
 
     margin-bottom:20px;
+
+    font-size:1.05rem;
 }
 
 .sobre-imagem img{
@@ -198,11 +251,13 @@ nav a:hover{
     box-shadow:0 0 30px #ff008c33;
 }
 
+/* ================================= */
 /* CARDS */
+/* ================================= */
 
 .cards{
 
-    padding:50px 8% 100px;
+    padding:180px 8% 100px;
 
     display:grid;
 
@@ -214,15 +269,22 @@ nav a:hover{
 
 .card{
 
-    background:#101010;
-
-    border:1px solid #ff008c33;
+    overflow:hidden;
 
     border-radius:20px;
 
-    overflow:hidden;
+    border:1px solid #ff008c33;
 
     transition:0.4s;
+
+    backdrop-filter:blur(10px);
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.01)
+    );
 }
 
 .card:hover{
@@ -259,7 +321,115 @@ nav a:hover{
     line-height:1.7;
 }
 
+/* ================================= */
+/* FORMULÁRIO */
+/* ================================= */
+
+.formulario{
+
+    padding:180px 8% 100px;
+}
+
+.formulario-container{
+
+    max-width:700px;
+
+    margin:auto;
+
+    padding:50px;
+
+    border-radius:25px;
+
+    background:
+    linear-gradient(
+        145deg,
+        rgba(255,255,255,0.03),
+        rgba(255,255,255,0.01)
+    );
+
+    border:1px solid #ff008c33;
+
+    backdrop-filter:blur(12px);
+
+    box-shadow:0 0 30px #ff008c11;
+}
+
+.formulario h3{
+
+    color:#ff008c;
+
+    font-size:2.5rem;
+
+    margin-bottom:30px;
+
+    text-align:center;
+}
+
+.form-group{
+
+    margin-bottom:25px;
+}
+
+.form-group input,
+.form-group textarea{
+
+    width:100%;
+
+    padding:18px;
+
+    border-radius:12px;
+
+    border:1px solid #ff008c44;
+
+    background:#0d0d0d;
+
+    color:white;
+
+    outline:none;
+
+    font-size:1rem;
+}
+
+.form-group textarea{
+
+    resize:none;
+
+    height:150px;
+}
+
+.formulario button{
+
+    width:100%;
+
+    padding:18px;
+
+    border:none;
+
+    border-radius:12px;
+
+    background:#ff008c;
+
+    color:white;
+
+    font-weight:bold;
+
+    cursor:pointer;
+
+    transition:0.3s;
+
+    box-shadow:0 0 20px #ff008c55;
+}
+
+.formulario button:hover{
+
+    transform:translateY(-3px);
+
+    box-shadow:0 0 35px #ff008c99;
+}
+
+/* ================================= */
 /* FOOTER */
+/* ================================= */
 
 footer{
 
@@ -272,7 +442,9 @@ footer{
     color:#999;
 }
 
+/* ================================= */
 /* RESPONSIVO */
+/* ================================= */
 
 @media(max-width:900px){
 
@@ -281,6 +453,11 @@ footer{
         flex-direction:column;
 
         gap:20px;
+    }
+
+    .hero{
+
+        text-align:center;
     }
 
     .hero h2{
@@ -293,65 +470,8 @@ footer{
         grid-template-columns:1fr;
     }
 
-}
-@media(max-width:900px){
-
-    .navbar{
-
-        flex-direction:column;
-
-        gap:20px;
-    }
-
-    .hero h2{
-
-        font-size:2.8rem;
-    }
-
-    .sobre{
+    .cards{
 
         grid-template-columns:1fr;
     }
-
-}
-
-/* ================================= */
-/* GLOW BACKGROUND */
-/* ================================= */
-
-.hero::before{
-
-    content:"";
-
-    position:absolute;
-
-    width:500px;
-    height:500px;
-
-    background:#ff008c;
-
-    border-radius:50%;
-
-    filter:blur(180px);
-
-    opacity:0.18;
-
-    top:-150px;
-    right:-100px;
-}
-
-/* ================================= */
-/* GLASS EFFECT */
-/* ================================= */
-
-.card{
-
-    backdrop-filter:blur(10px);
-
-    background:
-    linear-gradient(
-        145deg,
-        rgba(255,255,255,0.03),
-        rgba(255,255,255,0.01)
-    );
 }
